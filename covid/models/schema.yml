@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: mart_lookup_cases_deaths
+    description: >
+      This table provides a daily COVID-19 summary at the country level,
+      combining case and death counts from the mart_cases_deaths source
+      with standardized country codes from the country_lookup reference table.
+      It includes population, reporting date, and data source.
+    columns:
+      - name: country
+        description: Name of the country
+        tests:
+          - not_null
+          
+      - name: country_code_2_digit
+        description: ISO 3166-1 alpha-2 country code
+      - name: country_code_3_digit
+        description: ISO 3166-1 alpha-3 country code
+        
+      - name: population
+        description: Total population of the country
+        tests:
+          - not_null
+          
+      - name: confirmed_cases
+        description: Cumulative confirmed COVID-19 cases
+        tests:
+          - not_null
+          
+          
+      - name: deaths
+        description: Cumulative COVID-19 deaths
+        tests:
+          - not_null
+          
+          
+      - name: reported_date
+        description: Date of the report
+          
+      - name: source
+        description: Source of the data
+        

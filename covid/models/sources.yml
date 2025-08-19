@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: COVID
+    schema: RAW
+    tables:
+      - name: cases_deaths
+        identifier: RAW_CASES_DEATHS
+
+      - name: hospital_admissions
+        identifier: RAW_hospital_admissions
